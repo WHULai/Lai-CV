@@ -13,7 +13,7 @@ Quick start with [Overleaf](https://www.overleaf.com/latex/templates/yuans-resum
 
 ## Preview
 
-![image](https://github.com/Xyz-yuanhf/yuan-resume/blob/main/Preview/preview.png)
+![image](https://github.com/Xyz-yuanhf/yuan-resume/blob/4015c4eb0d0e692bda9ce81e96fc8a63e8b66e57/Preview/preview.png)
 
 ## License
 
