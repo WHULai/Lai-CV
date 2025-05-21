@@ -9,6 +9,7 @@
 
 \documentclass[a4paper, 10pt]{article}
 \usepackage{myresume}  % Style package
+\usepackage{hyperref}
 
 % --------------------  START  --------------------
 \begin{document}
@@ -16,13 +17,14 @@
 % -------------------- HEADING --------------------
 \begin{flushright}
   \setstretch{0.6}
-  \item {\Calluna (+00) 111-2222-3333}  % Phone number
-  \item {\Calluna yuanhf@example.com}  % E-mail address
-  \item {\Calluna http://www.example.com}  % Home page
+  % \item {\Calluna (+00) 111-2222-3333}  % Phone number
+  \item {\Calluna \href{mailto:weilai@weilai.group}{weilai@weilai.group}}  % E-mail address
+  \item {\Calluna \href{http://www.weilai.group}{http://www.weilai.group}}  % Home page
 \end{flushright}\vspace{-45pt}
 
 \begin{flushleft}  % Rplace here with your name (and identity if required)
-  {\Calluna \fontsize{30pt}{30pt}\selectfont \textsc{Xiao Yuan}} \quad {\Calluna \fontsize{14.5pt}{14.5pt}\selectfont \textsc{Ph.D.}}
+  % {\Calluna \fontsize{30pt}{30pt}\selectfont \textsc{Xiao Yuan}} \quad {\Calluna \fontsize{14.5pt}{14.5pt}\selectfont \textsc{Ph.D.}}
+  {\Calluna \fontsize{30pt}{30pt}\selectfont \textsc{Wei Lai}}
   \noindent\rule{\textwidth}{0.4pt}
 \end{flushleft}
 
@@ -30,6 +32,7 @@
 \sectionBlock{
 \section{Education}
 }{
+\iffalse
 \eduHeading
   {Department of Automation, Tsinghua University}{Beijing, China}
   {Ph.D. in Control Science and Engineering}{2022 - 2028 \footnotesize{\textit{(expected)}}}
@@ -37,16 +40,18 @@
   \myItem{Advisor: Prof. Xiao Yuan}
   \myItem{Research area: Operations Research and Machine Learning}
 \itemListEnd
+\fi
 
 \eduHeading
-  {Department of Precision Instrument, Tsinghua University}{Beijing, China}
-  {B.E. in Measurement and Control Technology and Instrument}{2018 - 2022}
+  {Shool of Power and Mechanical Engineering, Wuhan University}{Hubei, China}
+  {B.E. in RObotics Engineering}{2024 - 2028 \footnotesize{\textit{(expected)}}}
 \itemListStart
-  \myItem{GPA: 0.00/4.00, Rank: 64/64.}
+  \myItem{GPA: 3.72/4.00, Rank: 31/73.}
 \itemListEnd
 
 }
 
+\iffalse
 % -------------------- PUBLICATIONS --------------------
 \sectionBlock{
 \section{Publications}
@@ -58,7 +63,9 @@
 \item John Doe, \textbf{Xiao Yuan}, Hua Li. Artificial Intelligence in Healthcare: Transforming Diagnostics and Treatment. \textit{International Conference on HealthTech Innovations}, 2023.
 \pubListEnd
 }
+\fi
 
+\iffalse
 % -------------------- PROJECTS --------------------
 \sectionBlock{
 \section{Projects}
@@ -71,7 +78,9 @@
 {\textbf{Optimizing Urban Traffic Flow Using AI-Based Predictive Models}}
 {Smart Transportation Innovations Grant} {2021.12 - 2022.12}.
 }
+\fi
 
+\iffalse
 % -------------------- INTERNSHIPS --------------------
 \sectionBlock{
 \section{Internships}
@@ -89,7 +98,9 @@
   \myItem{Prepare reports and presentations summarizing research findings.}
 \itemListEnd
 }
+\fi
 
+\iffalse
 % -------------------- AWARDS & HONORS --------------------
 \sectionBlock{
 \section{Awards\\and\\Honors}
@@ -102,6 +113,7 @@
 \item \emph{Academic Scholarship}, Tsinghua University \hfill 2022.09
 \awardListEnd
 }
+\fi
 
 % -------------------- SKILLS --------------------
 \sectionBlock{
@@ -109,11 +121,12 @@
 }{
 \skillListStart
 \justifying
-\item \emph{Languages}: Chinese, English, French.
-\item \emph{Programming}: {\Courier \fontsize{11pt}{11pt}\selectfont Python}, {\Courier \fontsize{11pt}{11pt}\selectfont C++}, {\Courier \fontsize{11pt}{11pt}\selectfont MATLAB}.
+\item \emph{Languages}: Chinese, English.
+\item \emph{Programming}: {\Courier \fontsize{11pt}{11pt}\selectfont Python}, {\Courier \fontsize{11pt}{11pt}\selectfont C}.
 \skillListEnd
 }
 
+\iffalse
 % -------------------- OTHERS --------------------
 \sectionBlock{
 \section{Academic Services}
@@ -125,6 +138,7 @@
 \item \phantom{\emph{Reviewers for}:} \;...
 \skillListEnd
 }
+\fi
 
 \end{document}
 
