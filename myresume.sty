@@ -19,6 +19,39 @@
 \usepackage{enumitem}
 \usepackage{tabularx}
 \usepackage{ragged2e}
+\usepackage[
+  backend=biber,
+  style=ieee,
+  sorting=none,
+  maxcitenames=99,
+  mincitenames=99,
+  maxbibnames=99,
+  minbibnames=99
+]{biblatex}
+\addbibresource{ref.bib}
+
+% Default author name target for bolding in publication entries.
+% Override \MyFamilyName and \MyGivenName in main.tex.
+\providecommand*{\MyFamilyName}{}
+\providecommand*{\MyGivenName}{}
+\renewcommand*{\mkbibnamefamily}[1]{%
+  \ifboolexpr{
+    test {\ifdefstrequal{\namepartfamily}{\MyFamilyName}}
+    and
+    test {\ifdefstrequal{\namepartgiven}{\MyGivenName}}
+  }
+    {\textbf{#1}}
+    {#1}%
+}
+\renewcommand*{\mkbibnamegiven}[1]{%
+  \ifboolexpr{
+    test {\ifdefstrequal{\namepartfamily}{\MyFamilyName}}
+    and
+    test {\ifdefstrequal{\namepartgiven}{\MyGivenName}}
+  }
+    {\textbf{#1}}
+    {#1}%
+}
 
 % Font style
 \usepackage{fontspec}
@@ -82,7 +115,8 @@
 \newcommand{\awardListEnd}{\end{itemize}\vspace{-11pt}}
 
 % Skill list
-\newcommand{\skillListStart}{\begin{itemize}[leftmargin=0pt, label={}, itemsep=0pt]}
+\newcommand{\skillListStart}{\begin{itemize}[left=0pt, itemsep=0pt]}
+% \newcommand{\skillListStart}{\begin{itemize}[leftmargin=0pt, label={}, itemsep=0pt]}
 \newcommand{\skillListEnd}{\end{itemize}\vspace{-11pt}}
 
 % Item list

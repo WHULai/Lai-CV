@@ -11,6 +11,10 @@
 \usepackage{myresume}  % Style package
 \usepackage{hyperref}
 
+% Highlight one specific author name in publication entries.
+\renewcommand*{\MyFamilyName}{Wei}
+\renewcommand*{\MyGivenName}{Lai}
+
 % --------------------  START  --------------------
 \begin{document}
 
@@ -45,41 +49,44 @@
 \fi
 
 \eduHeading
-  {Shool of Robotics, Wuhan University}{Hubei, China}
-  {B.E. in Robotics Engineering}{2024 - 2028 \footnotesize{\textit{(expected)}}}
+  {School of Robotics, Wuhan University}{Hubei, China}
+  {B.E. in Robotics Engineering}{2024 -- 2028 \footnotesize{\textit{(expected)}}}
 \itemListStart
-  \myItem{GPA: 3.68/4.00.}
+  \myItem{GPA: 3.68/4.00, 88/100.}
 \itemListEnd
 }
 
-\iffalse
+
 % -------------------- PUBLICATIONS --------------------
 \sectionBlock{
 \section{Publications}
 }{
 \pubListStart
 \justifying
+\item \fullcite{zhu2026high}
+\iffalse
 \item \textbf{Xiao Yuan}, Hua Li. The Future Urban Transportation Systems: Innovations and Challenges. \textit{Journal of Operations Research and Optimization}, 2024.
 \item Hua Li, \textbf{Xiao Yuan}, John Doe. Optimizing Logistics and Supply Chain Networks Using Machine Learning Techniques. \textit{International Conference on Operations Research and Machine Learning}, 2023.
 \item John Doe, \textbf{Xiao Yuan}, Hua Li. Artificial Intelligence in Healthcare: Transforming Diagnostics and Treatment. \textit{International Conference on HealthTech Innovations}, 2023.
+\fi
 \pubListEnd
 }
-\fi
 
-\iffalse
+
 % -------------------- PROJECTS --------------------
 \sectionBlock{
 \section{Projects}
 }{
 \projHeading
-{\textbf{Advanced Optimization Techniques for Smart Grid Management}}
-{National Natural Science Foundation of China (NSFC)} {2023.01 - 2024.01}
+{\textbf{Thermoelectric-Based Airflow Sensing and Convective Heat Transfer Modeling}}
+{Undergraduate Research Project} {2025.04 -- Present}
 
+\iffalse
 \projHeading
 {\textbf{Optimizing Urban Traffic Flow Using AI-Based Predictive Models}}
 {Smart Transportation Innovations Grant} {2021.12 - 2022.12}.
-}
 \fi
+}
 
 \iffalse
 % -------------------- INTERNSHIPS --------------------
