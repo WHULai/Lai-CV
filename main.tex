@@ -1,8 +1,9 @@
 %-------------------------------------
 % Resum in LaTeX (XeLaTeX)
-% Author:  HF Yuan
-% Project: https://github.com/xyz-yuanhf/yuan-resume
-% Base on: https://github.com/mattyHerzig/mattys_resume
+% Author:  Lai Wei
+% Project: https://github.com/WHULai/Lai-CV
+% Base on: https://github.com/xyz-yuanhf/yuan-resume
+%          https://github.com/mattyHerzig/mattys_resume
 %          http://www.jianxu.net/en/
 % License: MIT
 %------------------------------------
@@ -14,6 +15,7 @@
 % Highlight one specific author name in publication entries.
 \renewcommand*{\MyFamilyName}{Wei}
 \renewcommand*{\MyGivenName}{Lai}
+\SetPubAuthorRoles{zhu2026high}{1,2}{3,12,13}
 
 % --------------------  START  --------------------
 \begin{document}
@@ -47,7 +49,6 @@
   \myItem{Research area: Operations Research and Machine Learning}
 \itemListEnd
 \fi
-
 \eduHeading
   {School of Robotics, Wuhan University}{Hubei, China}
   {B.E. in Robotics Engineering}{2024 -- 2028 \footnotesize{\textit{(expected)}}}
@@ -64,12 +65,8 @@
 \pubListStart
 \justifying
 \item \fullcite{zhu2026high}
-\iffalse
-\item \textbf{Xiao Yuan}, Hua Li. The Future Urban Transportation Systems: Innovations and Challenges. \textit{Journal of Operations Research and Optimization}, 2024.
-\item Hua Li, \textbf{Xiao Yuan}, John Doe. Optimizing Logistics and Supply Chain Networks Using Machine Learning Techniques. \textit{International Conference on Operations Research and Machine Learning}, 2023.
-\item John Doe, \textbf{Xiao Yuan}, Hua Li. Artificial Intelligence in Healthcare: Transforming Diagnostics and Treatment. \textit{International Conference on HealthTech Innovations}, 2023.
-\fi
 \pubListEnd
+{\footnotesize \textsuperscript{\textdagger} Co-first authors; \textsuperscript{*} Corresponding authors.}
 }
 
 

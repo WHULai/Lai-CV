@@ -34,14 +34,53 @@
 % Override \MyFamilyName and \MyGivenName in main.tex.
 \providecommand*{\MyFamilyName}{}
 \providecommand*{\MyGivenName}{}
+\newcommand*{\PubCoFirstRules}{}
+\newcommand*{\PubCorrRules}{}
+
+% Configure author-role marks in main.tex:
+% \SetPubCoFirst{bibkey}{1,2}
+% \SetPubCorresponding{bibkey}{12,13}
+\newcommand*{\SetPubCoFirst}[2]{\gappto{\PubCoFirstRules}{\PubCoFirstRule{#1}{#2}}}
+\newcommand*{\SetPubCorresponding}[2]{\gappto{\PubCorrRules}{\PubCorrRule{#1}{#2}}}
+\newcommand*{\SetPubAuthorRoles}[3]{%
+  \SetPubCoFirst{#1}{#2}%
+  \SetPubCorresponding{#1}{#3}%
+}
+
+\newtoggle{PubMarkMatched}
+\newcommand*{\IfListCountInCSVTF}[3]{%
+  \togglefalse{PubMarkMatched}%
+  \def\do##1{%
+    \ifnum\value{listcount}=##1\relax
+      \toggletrue{PubMarkMatched}%
+    \fi
+  }%
+  \docsvlist{#1}%
+  \iftoggle{PubMarkMatched}{#2}{#3}%
+}
+
+\newcommand*{\PubCoFirstRule}[2]{%
+  \iffieldequalstr{entrykey}{#1}{%
+    \IfListCountInCSVTF{#2}{\textsuperscript{\textdagger}}{}%
+  }{}%
+}
+\newcommand*{\PubCorrRule}[2]{%
+  \iffieldequalstr{entrykey}{#1}{%
+    \IfListCountInCSVTF{#2}{\textsuperscript{*}}{}%
+  }{}%
+}
+\newcommand*{\AuthorRoleMark}{%
+  \PubCoFirstRules
+  \PubCorrRules
+}
 \renewcommand*{\mkbibnamefamily}[1]{%
   \ifboolexpr{
     test {\ifdefstrequal{\namepartfamily}{\MyFamilyName}}
     and
     test {\ifdefstrequal{\namepartgiven}{\MyGivenName}}
   }
-    {\textbf{#1}}
-    {#1}%
+    {\textbf{#1}\AuthorRoleMark}
+    {#1\AuthorRoleMark}%
 }
 \renewcommand*{\mkbibnamegiven}[1]{%
   \ifboolexpr{

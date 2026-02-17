@@ -1,20 +1,57 @@
-## Yuan's Resume
+# Lai-CV
 
-An elegant academic resume template, compiled with XeLaTeX. This project is a reproduction of  [Jian Xu's CV](http://www.jianxu.net/en/files/JianXu_CV.pdf), and refers to the code of [Matty's Resume](https://github.com/mattyHerzig/mattys_resume).
+An academic CV template built with XeLaTeX, customized from `Yuan's Resume`.
+
+## Acknowledgements
+
+Many thanks to the original author **HF Yuan** for creating and open-sourcing the template:  
+https://github.com/xyz-yuanhf/yuan-resume
+
+This project also acknowledges the works referenced by the original template:
+
+- Jian Xu's CV: http://www.jianxu.net/en/files/JianXu_CV.pdf
+- Matty's Resume: https://github.com/mattyHerzig/mattys_resume
+
+## New Features
+
+- Manage `Publications` with `ref.bib`, and render entries via `\fullcite{...}`.
+- Automatically bold your own name in `Publications` by setting:
+  - `\renewcommand*{\MyFamilyName}{...}`
+  - `\renewcommand*{\MyGivenName}{...}`
+- Automatically mark co-first authors and corresponding authors (superscript style) with:
+  - `\SetPubAuthorRoles{zhu2026high}{1,2}{3,12,13}`
 
 ## Usage
 
-Quick start with [Overleaf](https://www.overleaf.com/latex/templates/yuans-resume-template/hzkxnqxyfgnr) for online edit and compilation, or compile on your own computer.
+Configure in `main.tex`:
 
-**Note:** 
+```tex
+% Automatically bold your own name in publications
+\renewcommand*{\MyFamilyName}{Wei}
+\renewcommand*{\MyGivenName}{Lai}
 
-- Please compile using **XeLaTeX** (pdfLaTeX cannot import the fonts correctly).
-- The fonts are included in this project package, and please follow their copyright.
+% Author-role marks for one paper
+% \SetPubAuthorRoles{bibkey}{co-first author indices}{corresponding author indices}
+\SetPubAuthorRoles{zhu2026high}{1,2}{3,12,13}
+```
 
-## Preview
+Cite in the `Publications` section:
 
-![image](https://github.com/Xyz-yuanhf/yuan-resume/blob/4015c4eb0d0e692bda9ce81e96fc8a63e8b66e57/Preview/preview.png)
+```tex
+\item \fullcite{zhu2026high}
+```
+
+Notes:
+
+- Author indices are 1-based and follow the order in `author={...}` of that BibTeX entry.
+- You can add a symbol legend under each item, for example:  
+  `\textsuperscript{\textdagger} Co-first authors; \textsuperscript{*} Corresponding authors.`
+
+## Compile
+
+- Compile with **XeLaTeX** + **biber** (for example: `latexmk -xelatex main.tex`).
+- Fonts are included in this repository; please respect their license terms.
 
 ## License
 
-The MIT License (MIT). Copyrighted fonts are not subjected to this License.
+MIT License. Copyrighted fonts are not subjected to this License.
